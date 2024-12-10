@@ -1,0 +1,9 @@
+version: '3'
+services:
+  doc_generator:
+    build: .
+    image: doc-generator:latest
+    volumes:
+      - ./src:/app/src
+      - ./doc:/app/doc
+    command: javadoc -sourcepath /app/src -d /app/doc -subpackages ru
